@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secret Confessions</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #080808;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+.container { width: 100%; max-width: 420px; }
+.tag { color: #888; letter-spacing: 4px; font-size: 11px; }
+h1 { font-size: 32px; letter-spacing: 2px; }
+p { color: #888; line-height: 1.6; font-size: 14px; }
+label {
+  display: block;
+  margin: 22px 0 9px;
+  font-size: 13px;
+}
+input, textarea {
+  width: 100%;
+  padding: 15px;
+  background: #141414;
+  color: white;
+  border: 1px solid #333;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+}
+input:focus, textarea:focus { border-color: #888; }
+textarea { height: 150px; resize: vertical; }
+button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 16px;
+  border: none;
+  border-radius: 8px;
+  background: #fff;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+#status { margin-top: 15px; font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="tag">A SAFE SPACE TO SPEAK</div>
+  <h1>SECRET<br>CONFESSIONS.</h1>
+  <p>Say what you can't say out loud.<br>No names. No judgement.</p>
+
+  <form id="confessionForm">
+    <label for="username">TELEGRAM USERNAME</label>
+    <input id="username" type="text"
+      placeholder="@yourusername" required maxlength="33">
+
+    <label for="confession">YOUR CONFESSION</label>
+    <textarea id="confession" maxlength="2000"
+      placeholder="Let it all out..." required></textarea>
+
+    <button type="submit">SEND CONFESSION ↗</button>
+    <div id="status"></div>
+  </form>
+</div>
+
+<script>
+document.getElementById('confessionForm')
+.addEventListener('submit', function(e) {
+  e.preventDefault();
+  document.getElementById('status').textContent =
+    'Thank you. Telegram connection is not set up yet.';
+});
+</script>
+</body>
+    </html>
